@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request 
+import os
  
 app = Flask(__name__) 
  
@@ -32,4 +33,4 @@ def get_user(user_id):
     return jsonify({"error": "User not found"}), 404 
  
 if __name__ == "__main__": 
-    app.run(debug=True, port=8080)
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 5000))
