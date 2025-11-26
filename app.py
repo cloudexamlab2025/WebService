@@ -32,4 +32,4 @@ def get_user(user_id):
     return jsonify({"error": "User not found"}), 404 
  
 if __name__ == "__main__": 
-    app.run()
+    app.run(debug=True, port=8080)
